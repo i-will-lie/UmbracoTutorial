@@ -1,0 +1,22 @@
+﻿@using Umbraco.Web.PublishedModels
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+
+@{
+	Layout = "Master.cshtml";
+}
+	<div style="color: @Model.FavouriteColourPicker">
+		<h1>@Model.Title</h1>
+
+		@Model.MainContent
+		<p>Your favourite colour is @Model.FavouriteColourPicker</p>
+	</div>	
+
+	@if(Model.ShowImage)
+	{
+	<img style="width:100%"
+		 title="Cat Picture" 
+		 src="https://www.humanesociety.org/sites/default/files/styles/2000x850/public/2018/08/kitten-440379.jpg?h=c8d00152&itok=dz_bhvnR"/>
+	}
+
+@*@Model.Value("title")*@
+

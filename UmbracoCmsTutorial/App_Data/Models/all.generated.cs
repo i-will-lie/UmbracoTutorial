@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "130a11543ad9ad7d")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "42a57d0e2241d838")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 
 // FILE: models.generated.cs
@@ -62,6 +62,27 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Favourite Colour Picker: Select favourite colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("favouriteColourPicker")]
+		public string FavouriteColourPicker => global::Umbraco.Web.PublishedModels.BasicContentControls.GetFavouriteColourPicker(this);
+
+		///<summary>
+		/// Main Content: Enter main content for this page.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainContent")]
+		public global::System.Web.IHtmlString MainContent => global::Umbraco.Web.PublishedModels.BasicContentControls.GetMainContent(this);
+
+		///<summary>
+		/// Show Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("showImage")]
+		public bool ShowImage => global::Umbraco.Web.PublishedModels.BasicContentControls.GetShowImage(this);
+
+		///<summary>
 		/// Title: Enter the title here.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
@@ -73,6 +94,18 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>Basic Content Controls</summary>
 	public partial interface IBasicContentControls : IPublishedContent
 	{
+		/// <summary>Favourite Colour Picker</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		string FavouriteColourPicker { get; }
+
+		/// <summary>Main Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		global::System.Web.IHtmlString MainContent { get; }
+
+		/// <summary>Show Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool ShowImage { get; }
+
 		/// <summary>Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		string Title { get; }
@@ -102,6 +135,39 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Favourite Colour Picker: Select favourite colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("favouriteColourPicker")]
+		public string FavouriteColourPicker => GetFavouriteColourPicker(this);
+
+		/// <summary>Static getter for Favourite Colour Picker</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static string GetFavouriteColourPicker(IBasicContentControls that) => that.Value<string>("favouriteColourPicker");
+
+		///<summary>
+		/// Main Content: Enter main content for this page.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainContent")]
+		public global::System.Web.IHtmlString MainContent => GetMainContent(this);
+
+		/// <summary>Static getter for Main Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static global::System.Web.IHtmlString GetMainContent(IBasicContentControls that) => that.Value<global::System.Web.IHtmlString>("mainContent");
+
+		///<summary>
+		/// Show Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("showImage")]
+		public bool ShowImage => GetShowImage(this);
+
+		/// <summary>Static getter for Show Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetShowImage(IBasicContentControls that) => that.Value<bool>("showImage");
 
 		///<summary>
 		/// Title: Enter the title here.
