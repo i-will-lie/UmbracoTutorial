@@ -17,84 +17,22 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "42a57d0e2241d838")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4d1de75e32083df8")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.7")]
 
 namespace Umbraco.Web.PublishedModels
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IBasicContentControls
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const string ModelTypeAlias = "home";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public Home(IPublishedContent content)
-			: base(content)
-		{ }
-
-		// properties
-
-		///<summary>
-		/// Favourite Colour Picker: Select favourite colour
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("favouriteColourPicker")]
-		public string FavouriteColourPicker => global::Umbraco.Web.PublishedModels.BasicContentControls.GetFavouriteColourPicker(this);
-
-		///<summary>
-		/// Main Content: Enter main content for this page.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("mainContent")]
-		public global::System.Web.IHtmlString MainContent => global::Umbraco.Web.PublishedModels.BasicContentControls.GetMainContent(this);
-
-		///<summary>
-		/// Show Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("showImage")]
-		public bool ShowImage => global::Umbraco.Web.PublishedModels.BasicContentControls.GetShowImage(this);
-
-		///<summary>
-		/// Title: Enter the title here.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("title")]
-		public string Title => global::Umbraco.Web.PublishedModels.BasicContentControls.GetTitle(this);
-	}
-
 	// Mixin Content Type with alias "basicContentControls"
 	/// <summary>Basic Content Controls</summary>
 	public partial interface IBasicContentControls : IPublishedContent
 	{
-		/// <summary>Favourite Colour Picker</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		string FavouriteColourPicker { get; }
-
 		/// <summary>Main Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		global::System.Web.IHtmlString MainContent { get; }
 
-		/// <summary>Show Image</summary>
+		/// <summary>Page Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		bool ShowImage { get; }
-
-		/// <summary>Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		string Title { get; }
+		string PageTitle { get; }
 	}
 
 	/// <summary>Basic Content Controls</summary>
@@ -123,17 +61,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Favourite Colour Picker: Select favourite colour
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("favouriteColourPicker")]
-		public string FavouriteColourPicker => GetFavouriteColourPicker(this);
-
-		/// <summary>Static getter for Favourite Colour Picker</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static string GetFavouriteColourPicker(IBasicContentControls that) => that.Value<string>("favouriteColourPicker");
-
-		///<summary>
 		/// Main Content: Enter main content for this page.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
@@ -145,26 +72,55 @@ namespace Umbraco.Web.PublishedModels
 		public static global::System.Web.IHtmlString GetMainContent(IBasicContentControls that) => that.Value<global::System.Web.IHtmlString>("mainContent");
 
 		///<summary>
-		/// Show Image
+		/// Page Title: Enter the title here.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("showImage")]
-		public bool ShowImage => GetShowImage(this);
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => GetPageTitle(this);
 
-		/// <summary>Static getter for Show Image</summary>
+		/// <summary>Static getter for Page Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static bool GetShowImage(IBasicContentControls that) => that.Value<bool>("showImage");
+		public static string GetPageTitle(IBasicContentControls that) => that.Value<string>("pageTitle");
+	}
+
+	/// <summary>Home</summary>
+	[PublishedModel("home")]
+	public partial class Home : PublishedContentModel, IBasicContentControls
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const string ModelTypeAlias = "home";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Home(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
 
 		///<summary>
-		/// Title: Enter the title here.
+		/// Main Content: Enter main content for this page.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		[ImplementPropertyType("title")]
-		public string Title => GetTitle(this);
+		[ImplementPropertyType("mainContent")]
+		public global::System.Web.IHtmlString MainContent => global::Umbraco.Web.PublishedModels.BasicContentControls.GetMainContent(this);
 
-		/// <summary>Static getter for Title</summary>
+		///<summary>
+		/// Page Title: Enter the title here.
+		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
-		public static string GetTitle(IBasicContentControls that) => that.Value<string>("title");
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => global::Umbraco.Web.PublishedModels.BasicContentControls.GetPageTitle(this);
 	}
 
 	/// <summary>Folder</summary>
