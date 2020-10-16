@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home> 
+@using ContentModels = Umbraco.Web.PublishedModels; @* from models.generated.cs*@
+@{
+	Layout = null;
+}
+
+@Model.Title
+@Model.Value("title")
